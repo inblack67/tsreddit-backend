@@ -9,7 +9,7 @@ import { Post } from './entities/Post';
 import { User } from './entities/User';
 import { Upvote } from './entities/Upvote';
 import { UserResolver } from './resolvers/user';
-import { __prod__ } from './utils/constants';
+import { isProd } from './utils/constants';
 import dotenv from 'dotenv';
 import 'colors';
 import { errorHandler } from './middlewares/errorHandler';
@@ -62,9 +62,9 @@ const main = async () =>
             cookie: {
                 httpOnly: true,
                 sameSite: 'lax',
-                secure: __prod__,
+                secure: isProd(),
                 maxAge: 1000 * 60 * 60 * 24, // 1 day
-                domain: __prod__ ? '.tsreddit.tk' : undefined
+                // domain: isProd() ? '.tsreddit-api.tsreddit.tk' : undefined
             },
         } ),
     );
