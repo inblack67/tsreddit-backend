@@ -39,7 +39,7 @@ const main = async () =>
     const app = express();
 
     // cookies must work in nginx env
-    app.set( 'proxy', 1 );
+    app.set( 'trust proxy', 1 );
 
     app.use( cors( {
         credentials: true,
