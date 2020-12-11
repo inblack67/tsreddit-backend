@@ -64,7 +64,7 @@ const main = async () =>
                 sameSite: 'lax',
                 secure: isProd(),
                 maxAge: 1000 * 60 * 60 * 24, // 1 day
-                // domain: isProd() ? '.tsreddit-api.tsreddit.tk' : undefined
+                domain: isProd() ? '.tsreddit.tk' : undefined
             },
         } ),
     );
