@@ -39,13 +39,12 @@ const main = async () =>
     const app = express();
 
     // cookies must work in nginx env
-    app.set( 'trust proxy', 1 );
+    app.set( 'trust proxy', true );
 
     app.use( cors( {
         credentials: true,
         origin: process.env.CLIENT_URL
     } ) );
-
 
     app.get( '/', ( _, res ) =>
     {
